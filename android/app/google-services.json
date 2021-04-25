@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394823303933",
+    "project_id": "witrone-3c929",
+    "storage_bucket": "witrone-3c929.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394823303933:android:e30b3bc6456902372f3494",
+        "android_client_info": {
+          "package_name": "com.example.wiretronoriginal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394823303933-h2sumnu4o541346d87fslmfd0uajm143.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6fVojcsPValt4wSAluyNRAyh94xwQhT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394823303933-h2sumnu4o541346d87fslmfd0uajm143.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
