@@ -3,6 +3,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wiretronoriginal/constants.dart';
+import 'package:wiretronoriginal/pages/login.dart';
 import 'package:wiretronoriginal/widgets/dialogue.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -46,7 +47,8 @@ class _RegisterPageState extends State<RegisterPage> {
         "email": _emailController.text,
       });
 
-      Navigator.pushNamed(context, '/login');
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
     }
   }
 

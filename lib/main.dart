@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       // title: 'Wire Tron',
       // initialRoute:'/',
       // onGenerateRoute:Routes.generate,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

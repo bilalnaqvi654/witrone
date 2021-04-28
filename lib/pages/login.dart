@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_geofire/flutter_geofire.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:wiretronoriginal/constants.dart';
 import 'package:wiretronoriginal/customer/customer_app.dart';
 import 'package:wiretronoriginal/pages/app.dart';
@@ -158,8 +161,11 @@ class _LoginPageState extends State<LoginPage> {
     if (user != null) {
       // verify login
       if (dropdownValue == "Field Worker") {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => AppPage())); //AppPage
+        makeAvailabel();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AppPage()));
+
+        //AppPage
       } else if (dropdownValue == "Customer") {
         Navigator.push(
             context,
@@ -186,4 +192,31 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Position position;
+  void setupPOstionLocator() async {
+    //  LocationPermission permission = await Geolocator.requestPermission();
+
+    position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      currentposition = position;
+      print(currentposition.latitude);
+    });
+  }
+
+  void initState() {
+    super.initState();
+
+    setupPOstionLocator();
+  }
+
+  void makeAvailabel() {
+    Geofire.initialize('PeopleAvailable');
+    Geofire.setLocation(
+      new DateTime.now().millisecondsSinceEpoch.toString(),
+      currentposition.latitude,
+      currentposition.longitude,
+    );
+  }
 }

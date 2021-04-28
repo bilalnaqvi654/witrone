@@ -19,7 +19,7 @@ class CustomerAppPage extends StatefulWidget {
 class _CustomerAppPageState extends State<CustomerAppPage> {
   final PageController pageController = new PageController(initialPage: 0);
   List<Widget> get _pages =>
-      [LocationPage(), TicketsPage(), ChatPage(), SettingsPage()];
+      [Home(), TicketsPage(), ChatPage(), SettingsPage()];
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
